@@ -35,7 +35,11 @@ function renderTasks(){
             renderTasks();
         }
         const compbtn = document.createElement("button");
-        compbtn.textContent = "✅";
+        if ( Tasks[index].completed ==true){
+        compbtn.textContent = "❌";
+        } else {
+            compbtn.textContent = "✔";
+        }
         compbtn.onclick = function(){
             Tasks[index].completed = !Tasks[index].completed;
             saveTasks();
